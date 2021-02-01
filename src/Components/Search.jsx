@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-const Search = props => {
-  const [searchText, setSearchText] = useState(props.searchText);
+const Search = ({ searchText, onSearch }) => {
+  const [text, setText] = useState(searchText);
 
   return (
     <div className="area">
       <input
         className="search-area"
         placeholder="Search text..."
-        value={searchText}
+        value={text}
         onChange={e => {
-          setSearchText(e.target.value);
-          props.onSearch(e.target.value);
+          setText(e.target.value);
+          onSearch(e.target.value);
         }}
       />
     </div>

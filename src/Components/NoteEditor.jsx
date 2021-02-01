@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const NoteEditor = props => {
+const NoteEditor = ({ onAdd }) => {
   const [text, setText] = useState("");
 
   function handleAdd() {
-    props.onAdd(text);
+    onAdd(text);
     setText("");
   }
 
